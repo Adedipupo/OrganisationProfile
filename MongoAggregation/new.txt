@@ -1,0 +1,14 @@
+ Write a MongoDB query to find the restaurants which belong to the borough Bronx and prepared 
+ either American or Chinese dish. 
+
+ {
+     $project:{
+         borough: 1,
+         cuisine: 1
+     },
+     $match: {
+         $or:{
+             new RegExp(/American|Chinese/,i)
+         }
+     }
+ }
